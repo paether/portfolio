@@ -1,0 +1,44 @@
+.footer-container {
+  display: none;
+  opacity: 0;
+  animation: fadeIn 1s forwards, slideInBottom 1s forwards;
+  animation-delay: 3.5s;
+}
+.links-container {
+  position: fixed;
+  bottom: 0;
+  left: 50px;
+}
+
+.links-container ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.footer-icon {
+  width: 35px;
+  height: 35px;
+  transition: transform 0.2s;
+}
+.footer-icon:hover {
+  transform: scale(1.2);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.line::after {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 90px;
+  margin: 0px auto;
+  background-color: var(--clr-white);
+}
+
+@media (min-width: 950px) {
+  .footer-container {
+    display: block;
+  }
+}
