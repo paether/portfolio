@@ -82,8 +82,8 @@ li {
 }
 
 .logo {
-  height: 3rem;
-  width: 3rem;
+  height: 50px;
+  width: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -234,7 +234,7 @@ label[for="ham-menu"] {
   opacity: 0;
   cursor: pointer;
   position: fixed;
-  top: 2rem;
+  top: 11px;
   right: 2rem;
   z-index: 4;
   width: 60px;
@@ -361,12 +361,9 @@ label[for="ham-menu"].resize {
   }
 }
 @media (max-width: 400px) {
-  .header-container {
-    padding: 0.5rem;
-  }
   label[for="ham-menu"] {
     right: 1rem;
-    top: 1.5rem !important;
+    /* top: 1.5rem !important; */
   }
   .dropdown-item-container li {
     font-size: 1rem;

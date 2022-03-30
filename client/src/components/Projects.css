@@ -63,28 +63,29 @@
   top: -5px;
   width: clamp(60px, 20vw, 500px);
 }
+.reveal.left {
+  transform: translateX(-150px);
+}
+.reveal.right {
+  transform: translateX(150px);
+}
 
 .reveal {
   position: relative;
   /* transform: translateY(150px); */
   opacity: 0;
-  /* transition: 1.5s all ease; */
+  transition: 1.2s all ease-in-out;
 }
 .reveal.active.left {
-  /* transform: translateY(0);
-  opacity: 1; */
-  animation: fadeIn 1s forwards, slideInLeft 1s forwards;
-}
-.reveal.revealed.left {
-  animation: fadeOutRight 1s forwards;
+  transform: translateX(0);
+  opacity: 1;
+
+  /* animation: fadeIn 1s forwards, slideInLeft 1s forwards; */
 }
 .reveal.active.right {
-  /* transform: translateY(0);
-  opacity: 1; */
-  animation: fadeIn 1s forwards, slideInRight 1s forwards;
-}
-.reveal.revealed.right {
-  animation: fadeOutLeft 1s forwards;
+  transform: translateX(0);
+  opacity: 1;
+  /* animation: fadeIn 1s forwards, slideInRight 1s forwards; */
 }
 
 .project-details-container {

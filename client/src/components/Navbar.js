@@ -33,7 +33,7 @@ export default function Navbar({ aboutNav, projectsNav, contactNav }) {
     let currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
       headerRef.current.style.top = "0";
-      hamburger.current.style.top = "2rem";
+      hamburger.current.style.top = "11px";
     } else {
       headerRef.current.style.top = "calc(-4rem - 40px)";
       if (dropDownNavRef.current.getAttribute("data-visible") === "false") {
