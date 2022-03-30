@@ -1,6 +1,4 @@
 import "./App.css";
-import Particles from "react-tsparticles";
-import particlesOptions from "./particles.json";
 import Navbar from "./components/Navbar";
 import Introduction from "./components/Introduction";
 import Footer from "./components/Footer";
