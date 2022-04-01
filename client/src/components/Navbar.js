@@ -1,12 +1,21 @@
 import { useRef, useEffect } from "react";
+import lang from "../translation";
 
-export default function Navbar({ aboutNav, projectsNav, contactNav }) {
+export default function Navbar({
+  aboutNav,
+  projectsNav,
+  contactNav,
+  language,
+  setLanguage,
+}) {
   const headerNavRef = useRef(null);
   const dropDownNavRef = useRef(null);
   const headerRef = useRef(null);
   const hamburger = useRef(null);
   const logoRef = useRef(null);
   const navCheckBoxRef = useRef(null);
+  const huFlag = useRef(null);
+  const gbFlag = useRef(null);
 
   const toggleNav = () => {
     if (navCheckBoxRef.current.checked) {
@@ -75,6 +84,15 @@ export default function Navbar({ aboutNav, projectsNav, contactNav }) {
       // hamburger.current.classList.remove("resize");
     }, 400);
   });
+  useEffect(() => {
+    if (language === "en") {
+      gbFlag.current.classList.add("active");
+      huFlag.current.classList.remove("active");
+    } else {
+      huFlag.current.classList.add("active");
+      gbFlag.current.classList.remove("active");
+    }
+  }, [language]);
 
   return (
     <>
@@ -83,19 +101,31 @@ export default function Navbar({ aboutNav, projectsNav, contactNav }) {
           <h2 className="text_shadows">P</h2>
         </div>
         <ul className="menu-item-container" ref={headerNavRef}>
+          <li className="flag-container">
+            <div
+              className="flag hu"
+              ref={huFlag}
+              onClick={() => setLanguage("hu")}
+            ></div>
+            <div
+              className="flag gb"
+              ref={gbFlag}
+              onClick={() => setLanguage("en")}
+            ></div>
+          </li>
           <li>
             <a ref={aboutNav} className="about active" href="#about">
-              About
+              {lang[language].nav_about}
             </a>
           </li>
           <li>
             <a ref={projectsNav} className="projects" href="#projects">
-              Projects
+              {lang[language].nav_projects}
             </a>
           </li>
           <li>
             <a ref={contactNav} className="contact" href="#contact">
-              Contact
+              {lang[language].nav_contact}
             </a>
           </li>
         </ul>

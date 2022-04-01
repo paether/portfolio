@@ -1,12 +1,19 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Introduction from "./components/Introduction";
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Projects from "./components/Projects";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 
 function App() {
+  const [language, setLanguage] = useState(
+    JSON.parse(localStorage.getItem("language")) || "en"
+  );
+  useEffect(() => {
+    localStorage.setItem("language", JSON.stringify(language));
+  }, [language]);
   const aboutNav = useRef(null);
   const projectsNav = useRef(null);
   const contactNav = useRef(null);
@@ -36,7 +43,6 @@ function App() {
         const sectionHeight = current.offsetHeight;
         const sectionTop = current.offsetTop - 200;
         const sectionId = current.getAttribute("id");
-        //compare
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
           switch (sectionId) {
             case "about":
@@ -76,12 +82,7 @@ function App() {
         var elementVisible = 150;
         if (elementTop < windowHeight - elementVisible) {
           reveals[i].classList.add("active");
-          //  reveals[i].classList.remove("revealed");
         }
-        // else if (reveals[i].classList.contains("active")) {
-        //    reveals[i].classList.remove("active");
-        //   reveals[i].classList.add("revealed");
-        // }
       }
     }
     window.addEventListener("scroll", () => {
@@ -99,10 +100,12 @@ function App() {
 
   return (
     <div className="main-container">
-      {/* <Particles options={particlesOptions} /> */}
-      <Navbar {...{ aboutNav, projectsNav, contactNav }} />
-      <Introduction />
-      <Projects />
+      <Navbar
+        {...{ aboutNav, projectsNav, contactNav, language, setLanguage }}
+      />
+      <Introduction {...{ language }} />
+      <Projects {...{ language }} />
+      <Contact {...{ language }} />
       <Footer />
     </div>
   );
