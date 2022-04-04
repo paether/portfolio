@@ -6,7 +6,7 @@ export default function Projects() {
         <div className="projects-header-line"></div>
       </div>
       <div className="projects">
-        <div className="project reveal left wish-list">
+        <div data-project="wishlist" className="project reveal left">
           <div className="project-mask-number">
             <div className="project-mask-number-back">Wish List</div>
             <div className="project-mask-number-front">
@@ -39,7 +39,7 @@ export default function Projects() {
             </div>
           </div>
         </div>
-        <div className="project-description-container reveal">
+        <div className="project-description-container wishlist">
           <div className="project-connector"></div>
           <div className="project-description">
             <h2 className="project-description-header">Main takeaways:</h2>
@@ -70,8 +70,7 @@ export default function Projects() {
             </ul>
           </div>
         </div>
-
-        <div className="project reveal right">
+        <div data-project="shorturl" className="project reveal right">
           <div className="project-mask-number">
             <div className="project-mask-number-back">Short URL</div>
             <div className="project-mask-number-front">
@@ -105,7 +104,7 @@ export default function Projects() {
             </div>
           </div>
         </div>
-        <div className="project-description-container reveal">
+        <div className="project-description-container shorturl">
           <div className="project-connector"></div>
           <div className="project-description">
             <h2 className="project-description-header">Main takeaways:</h2>
@@ -133,8 +132,7 @@ export default function Projects() {
             </ul>
           </div>
         </div>
-
-        <div className="project reveal left">
+        <div data-project="portfolio" className="project reveal left">
           <div className="project-mask-number">
             <div className="project-mask-number-back">Portfolio</div>
             <div className="project-mask-number-front">
@@ -168,14 +166,14 @@ export default function Projects() {
             </div>
           </div>
         </div>
-        <div className="project-description-container reveal">
+        <div className="project-description-container portfolio">
           <div className="project-connector"></div>
           <div className="project-description">
             <h2 className="project-description-header">Main takeaways:</h2>
             <ul className="project-description-items">
               <li className="project-description-item">
-                <b>Mobile first</b> approach when designing the site's
-                responsive layout using media queries.
+                Used <b>mobile first</b> approach when started designing the
+                site.
               </li>
               <li className="project-description-item">
                 Advanced usage of <b>pseudo-elements</b> and{" "}

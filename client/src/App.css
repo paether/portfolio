@@ -3,6 +3,7 @@
 @import "../src/components/Introduction.css";
 @import "../src/components/Footer.css";
 @import "../src/components/Projects.css";
+@import "../src/components/Contact.css";
 *,
 *::after,
 *::before {
@@ -31,22 +32,11 @@ html {
 body {
   /* background: linear-gradient(178deg, #111d33, #495f84, #334b74, #94add6); */
   /* background-size: 200% 200%; */
+
   overflow-x: hidden;
   background-attachment: fixed;
   background-color: #152238;
   background-image: url("../public/assets/topology.svg");
-}
-
-#tsparticles {
-  position: fixed;
-  opacity: 0;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  left: 0;
-  z-index: -1;
-  animation: fadeIn 10s forwards;
 }
 
 @keyframes fadeIn {

@@ -81,7 +81,15 @@ function App() {
         var elementTop = reveals[i].getBoundingClientRect().top;
         var elementVisible = 150;
         if (elementTop < windowHeight - elementVisible) {
-          reveals[i].classList.add("active");
+          if (!reveals[i].classList.contains("active")) {
+            reveals[i].classList.add("active");
+            const descClass = reveals[i].dataset.project;
+            const descElement = document.querySelector("." + descClass);
+            reveals[i].addEventListener("transitionend", () => {
+              console.log("n");
+              descElement.classList.add("desc-active");
+            });
+          }
         }
       }
     }
