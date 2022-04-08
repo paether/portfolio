@@ -50,6 +50,9 @@
 .project[data-project="wishlist"] {
   background-image: url("../../public/assets/wishlist.jpg");
 }
+.project[data-project="shorturl"] {
+  background-image: url("../../public/assets/shorturl.png");
+}
 .project-description-container {
   width: clamp(80%, 80vw, 800px);
   transition: all 1.2s ease;

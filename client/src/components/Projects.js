@@ -85,7 +85,7 @@ export default function Projects() {
           <div className="project-details-container">
             <div className="project-left">
               <div className="project-name-mobile">Short URL</div>
-              <h3 className="project-tech-stack">Tech stack</h3>
+              <h3 className="project-tech-stack">Short URL</h3>
               <h4 className="project-tech-stack-details">
                 JavaScript | React | Express | Node.js | MongoDB | CSS
               </h4>
