@@ -9,8 +9,11 @@
   opacity: 0;
   animation: fadeIn 1s forwards;
   animation-delay: 3.5s;
-  padding: 100px clamp(2.5rem, 8vw, 6rem) clamp(2rem, 10vh, 6rem)
-    clamp(2.5rem, 10vw, 10rem);
+  overflow: hidden;
+  padding-bottom: 50px;
+}
+.contact-container{
+  margin-bottom: 50px;
 }
 .projects {
   display: flex;
@@ -22,7 +25,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+
 }
 .project-connector {
   height: 50px;
@@ -33,7 +36,10 @@
   background-color: #1b2e63;
   padding: 2rem;
   height: 100%;
-  box-shadow: 0 20px 80px 0 rgb(0 0 0 / 45%);
+  /* box-shadow: 0 20px 80px 0 rgb(0 0 0 / 45%); */
+box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .project-description li {
@@ -48,10 +54,10 @@
   color: white;
 }
 .project[data-project="wishlist"] {
-  background-image: url("../../public/assets/wishlist.jpg");
+  background-image: url("../../../public/assets/wishlist.jpg");
 }
 .project[data-project="shorturl"] {
-  background-image: url("../../public/assets/shorturl.png");
+  background-image: url("../../../public/assets/shorturl.png");
 }
 .project-description-container {
   width: clamp(80%, 80vw, 800px);
@@ -63,14 +69,23 @@
 }
 .project {
   width: clamp(80%, 80vw, 800px);
-  margin-top: 100px;
+
   height: 21rem;
   position: relative;
   transition: all 0.35s ease;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  box-shadow: 0 20px 80px 0 rgb(0 0 0 / 45%);
+  /* box-shadow: 0 20px 80px 0 rgb(0 0 0 / 45%); */
+box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.project:first-of-type{
+  margin-top: 3rem;
+}
+.project:not(:first-of-type){
+  margin-top: 6rem;
 }
 
 .project::after {
@@ -93,6 +108,8 @@
   align-items: center;
   color: var(--clr-white);
   font-size: 2.5rem;
+  padding: 2rem clamp(2.5rem, 8vw, 6rem) 2rem
+      clamp(2.5rem, 10vw, 10rem);
 }
 
 .projects-header-line:after,
@@ -115,7 +132,6 @@
 
 .reveal {
   position: relative;
-  /* transform: translateY(150px); */
   opacity: 0;
   transition: 1.2s all ease-in-out;
 }
@@ -123,7 +139,6 @@
   transform: translateX(0);
   opacity: 1;
 
-  /* animation: fadeIn 1s forwards, slideInLeft 1s forwards; */
 }
 
 .desc-active {

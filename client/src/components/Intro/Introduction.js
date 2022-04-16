@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 import Typed from "typed.js";
-import lang from "../translation";
+import lang from "../../translation";
 
 export default function Introduction({ language }) {
   const introContainer = useRef(null);
@@ -37,25 +37,45 @@ export default function Introduction({ language }) {
     };
   }, []);
 
+  const LastName = () => {
+    const letters = ["H", "o", "r", "v", "á", "t", "h"];
+    return (
+      <div className="last-name">
+        {letters.map((letter, index) => (
+          <div key={letter + index} className="wobbles">
+            {letter}
+          </div>
+        ))}
+      </div>
+    );
+  };
+  const FirstName = () => {
+    const letters = ["P", "é", "t", "e", "r"];
+    return (
+      <div className="first-name">
+        {letters.map((letter, index) => (
+          <div key={letter + index} className="wobbles">
+            {letter}
+          </div>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <section id="about" className="intro-container" ref={introContainer}>
       <h1 className="name">
-        <div className="last-name">
-          <div className="wobbles">H</div>
-          <div className="wobbles">o</div>
-          <div className="wobbles">r</div>
-          <div className="wobbles">v</div>
-          <div className="wobbles">á</div>
-          <div className="wobbles">t</div>
-          <div className="wobbles">h</div>
-        </div>
-        <div className="first-name">
-          <div className="wobbles">P</div>
-          <div className="wobbles">é</div>
-          <div className="wobbles">t</div>
-          <div className="wobbles">e</div>
-          <div className="wobbles">r</div>
-        </div>
+        {language === "en" ? (
+          <>
+            <FirstName />
+            <LastName />
+          </>
+        ) : (
+          <>
+            <LastName />
+            <FirstName />
+          </>
+        )}
       </h1>
 
       <h2 ref={role} className="role"></h2>

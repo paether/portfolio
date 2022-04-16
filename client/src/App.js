@@ -1,38 +1,42 @@
-import "./App.css";
-import Navbar from "./components/Navbar";
-import Introduction from "./components/Introduction";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import Projects from "./components/Projects";
 import { useEffect, useRef, useState } from "react";
-import axios from "axios";
+
+import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
+import Introduction from "./components/Intro/Introduction";
+import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
+import Projects from "./components/Projects/Projects";
+
+import ping from "./pingHeroku"
+
 
 function App() {
+
   const [language, setLanguage] = useState(
     JSON.parse(localStorage.getItem("language")) || "en"
   );
-  useEffect(() => {
-    localStorage.setItem("language", JSON.stringify(language));
-  }, [language]);
   const aboutNav = useRef(null);
   const projectsNav = useRef(null);
   const contactNav = useRef(null);
+
   let sections;
   let reveals;
 
-  //A request is sent to make sure by the time someone clicks on the project Heroku starts the server.
-  //These projects are hosted free on Heroku so they put them on sleep after a period of time.
-  // (async () => {
-  //   try {
-  //     const getSite = await axios.get(
-  //       "https://paether-wishlistapp.herokuapp.com/"
-  //     );
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // })();
+  
+  
+  
+  useEffect(() => {
+    localStorage.setItem("language", JSON.stringify(language));
+  }, [language]);
 
   useEffect(() => {
+
+    const pingHeroku = setInterval(() => {
+      ping()
+    console.log("ping");
+  }, 1200000);
+    
+
     sections = document.querySelectorAll("section[id]");
     reveals = document.querySelectorAll(".reveal");
 
@@ -86,7 +90,7 @@ function App() {
             const descClass = reveals[i].dataset.project;
             const descElement = document.querySelector("." + descClass);
             reveals[i].addEventListener("transitionend", () => {
-              console.log("n");
+        
               descElement.classList.add("desc-active");
             });
           }
@@ -103,6 +107,8 @@ function App() {
         reveal();
         navHighlighter();
       });
+
+      clearInterval(pingHeroku)
     };
   }, []);
 

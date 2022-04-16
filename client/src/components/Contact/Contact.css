@@ -25,13 +25,16 @@ code {
   flex-direction: column;
   justify-content: center;
 }
-
+/* tilt-box */
 .card {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: clamp(45%, 79vw, 450px);
+    width: clamp(45%, 79vw, 450px);
   height: 100%;
+ transition: all 200ms ease-out;
+transform-style: preserve-3d;
+transform: perspective(1000px);
 }
 .card-data {
   width: 100%;
@@ -44,8 +47,11 @@ code {
 }
 
 .card {
+  margin-top: 3rem;
   background-color: #11181f;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .card .line-numbers {

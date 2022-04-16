@@ -109,10 +109,10 @@ li {
   opacity: 0.3;
 }
 .flag.hu {
-  background-image: url("../../public/assets/hu.svg");
+  background-image: url("../../../public/assets/hu.svg");
 }
 .flag.gb {
-  background-image: url("../../public/assets/gb.svg");
+  background-image: url("../../../public/assets/gb.svg");
 }
 .flag.active {
   opacity: 1;

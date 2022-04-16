@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import lang from "../translation";
+import lang from "../../translation";
 
 export default function Navbar({
   aboutNav,
@@ -84,15 +84,15 @@ export default function Navbar({
       // hamburger.current.classList.remove("resize");
     }, 400);
   });
-  useEffect(() => {
-    if (language === "en") {
-      gbFlag.current.classList.add("active");
-      huFlag.current.classList.remove("active");
-    } else {
-      huFlag.current.classList.add("active");
-      gbFlag.current.classList.remove("active");
-    }
-  }, [language]);
+  // useEffect(() => {
+  //   if (language === "en") {
+  //     gbFlag.current.classList.add("active");
+  //     huFlag.current.classList.remove("active");
+  //   } else {
+  //     huFlag.current.classList.add("active");
+  //     gbFlag.current.classList.remove("active");
+  //   }
+  // }, [language]);
 
   return (
     <>
@@ -101,7 +101,7 @@ export default function Navbar({
           <h2 className="text_shadows">P</h2>
         </div>
         <ul className="menu-item-container" ref={headerNavRef}>
-          <li className="flag-container">
+          {/* <li className="flag-container">
             <div
               className="flag hu"
               ref={huFlag}
@@ -112,7 +112,7 @@ export default function Navbar({
               ref={gbFlag}
               onClick={() => setLanguage("en")}
             ></div>
-          </li>
+          </li> */}
           <li>
             <a ref={aboutNav} className="about active" href="#about">
               {lang[language].nav_about}
