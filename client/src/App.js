@@ -7,11 +7,9 @@ import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import Projects from "./components/Projects/Projects";
 
-import ping from "./pingHeroku"
-
+import ping from "./pingHeroku";
 
 function App() {
-
   const [language, setLanguage] = useState(
     JSON.parse(localStorage.getItem("language")) || "en"
   );
@@ -22,20 +20,12 @@ function App() {
   let sections;
   let reveals;
 
-  
-  
-  
   useEffect(() => {
     localStorage.setItem("language", JSON.stringify(language));
   }, [language]);
 
   useEffect(() => {
-
-    const pingHeroku = setInterval(() => {
-      ping()
-    console.log("ping");
-  }, 1200000);
-    
+    ping();
 
     sections = document.querySelectorAll("section[id]");
     reveals = document.querySelectorAll(".reveal");
@@ -90,7 +80,6 @@ function App() {
             const descClass = reveals[i].dataset.project;
             const descElement = document.querySelector("." + descClass);
             reveals[i].addEventListener("transitionend", () => {
-        
               descElement.classList.add("desc-active");
             });
           }
@@ -107,8 +96,6 @@ function App() {
         reveal();
         navHighlighter();
       });
-
-      clearInterval(pingHeroku)
     };
   }, []);
 

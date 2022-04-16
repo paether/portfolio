@@ -27,11 +27,27 @@ export default function Projects() {
             </div>
             <div className="project-right">
               <div className="project-links-container">
-                <button className="project-btn live">
+                <button
+                  className="project-btn live"
+                  onClick={() =>
+                    window.open(
+                      "https://paether-wishlistapp.herokuapp.com/",
+                      "_blank"
+                    )
+                  }
+                >
                   <span className="btn-text">Live site</span>
                   <div className="btn-mask"></div>
                 </button>
-                <button className="project-btn live">
+                <button
+                  className="project-btn live"
+                  onClick={() =>
+                    window.open(
+                      "https://github.com/paether/wish-list-app/",
+                      "_blank"
+                    )
+                  }
+                >
                   <span className="btn-text">GitHub</span>
                   <div className="btn-mask"></div>
                 </button>
@@ -92,11 +108,24 @@ export default function Projects() {
             </div>
             <div className="project-right">
               <div className="project-links-container">
-                <button className="project-btn live">
+                <button
+                  className="project-btn live"
+                  onClick={() =>
+                    window.open("https://p-urls.herokuapp.com/", "_blank")
+                  }
+                >
                   <span className="btn-text">Live site</span>
                   <div className="btn-mask"></div>
                 </button>
-                <button className="project-btn live">
+                <button
+                  className="project-btn live"
+                  onClick={() =>
+                    window.open(
+                      "https://github.com/paether/shorturl/",
+                      "_blank"
+                    )
+                  }
+                >
                   <span className="btn-text">GitHub</span>
                   <div className="btn-mask"></div>
                 </button>
@@ -154,11 +183,15 @@ export default function Projects() {
             </div>
             <div className="project-right">
               <div className="project-links-container">
-                <button className="project-btn live">
-                  <span className="btn-text">Live site</span>
-                  <div className="btn-mask"></div>
-                </button>
-                <button className="project-btn live">
+                <button
+                  className="project-btn live"
+                  onClick={() =>
+                    window.open(
+                      "https://github.com/paether/portfolio/",
+                      "_blank"
+                    )
+                  }
+                >
                   <span className="btn-text">GitHub</span>
                   <div className="btn-mask"></div>
                 </button>
@@ -187,6 +220,67 @@ export default function Projects() {
               <li className="project-description-item">
                 Optimizing the site's performance by using chrome's{" "}
                 <b>Lighthouse</b> features and recommendations.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div data-project="working-on" className="project reveal right">
+          <div className="project-mask-number">
+            <div className="project-mask-number-back">Working On</div>
+            <div className="project-mask-number-front">
+              <div
+                data-index="Working On"
+                className="project-mask-number-overlay"
+              >
+                Working On
+              </div>
+            </div>
+          </div>
+          <div className="project-details-container">
+            <div className="project-left">
+              <div className="project-name-mobile">Working On</div>
+              <h3 className="project-tech-stack">Chat app</h3>
+              <h4 className="project-tech-stack-details">
+                JavaScript | React | Express | Node | socket.io
+              </h4>
+            </div>
+            <div className="project-right">
+              <div className="project-links-container">
+                <button
+                  className="project-btn live"
+                  onClick={() =>
+                    window.open(
+                      "https://github.com/paether/p-chatter/",
+                      "_blank"
+                    )
+                  }
+                >
+                  <span className="btn-text">GitHub</span>
+                  <div className="btn-mask"></div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="project-description-container working-on">
+          <div className="project-connector"></div>
+          <div className="project-description">
+            <h2 className="project-description-header">Planned features:</h2>
+            <ul className="project-description-items">
+              <li className="project-description-item">
+                <b>PassportJS</b> authentication with stored cookie sessions
+                (implemented).
+              </li>
+              <li className="project-description-item">
+                <b>Socket.io</b> for real time chat updates with added rooms as
+                well.
+              </li>
+
+              <li className="project-description-item">
+                Send friend requests and accept them.
+              </li>
+              <li className="project-description-item">
+                Context API for state management.
               </li>
             </ul>
           </div>
