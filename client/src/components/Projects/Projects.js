@@ -139,25 +139,20 @@ export default function Projects() {
             <h2 className="project-description-header">Main takeaways:</h2>
             <ul className="project-description-items">
               <li className="project-description-item">
-                Implemented authentication using <b>bcrypt</b>, <b>JWT</b> and{" "}
-                <b>Firebase</b> in <b>Express</b>. E-mail address is not
-                required to register on purpose.
+                A small and compact website which lets the user generate a
+                shorted URL and a QR Code with it.
               </li>
               <li className="project-description-item">
-                Added <b>Socket.io</b> which enables frontend data updates
-                without the need of refreshing the page.
+                Wanted to try out how QR Code generators work and how redirects
+                are handled in <b>Express</b>.
               </li>
               <li className="project-description-item">
-                Used <b>Axios</b> for backend API <b>CRUD</b> methods.
+                Implemented CSS 3D features.
               </li>
               <li className="project-description-item">
-                Took advantage of React's <b>useCallback</b> and{" "}
-                <b>useContext</b> to make the site and code more efficient and
-                easier to use.
+                URL is validated on server side.
               </li>
-              <li className="project-description-item">
-                Practiced <b>GitHub's</b> pull request and branching features.
-              </li>
+              <li className="project-description-item">Responsive layout.</li>
             </ul>
           </div>
         </div>
