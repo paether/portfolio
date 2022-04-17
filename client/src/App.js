@@ -7,8 +7,6 @@ import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import Projects from "./components/Projects/Projects";
 
-import ping from "./pingHeroku";
-
 function App() {
   const [language, setLanguage] = useState(
     JSON.parse(localStorage.getItem("language")) || "en"

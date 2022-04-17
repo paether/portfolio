@@ -30,7 +30,7 @@ code {
   display: flex;
   flex-direction: column;
   position: relative;
-    width: clamp(45%, 79vw, 450px);
+    width: clamp(30%, 79vw, 450px);
   height: 100%;
  transition: all 200ms ease-out;
 transform-style: preserve-3d;
