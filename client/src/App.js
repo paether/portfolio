@@ -25,8 +25,6 @@ function App() {
   }, [language]);
 
   useEffect(() => {
-    ping();
-
     sections = document.querySelectorAll("section[id]");
     reveals = document.querySelectorAll(".reveal");
 
