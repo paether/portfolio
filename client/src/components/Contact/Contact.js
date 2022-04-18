@@ -1,4 +1,5 @@
 import { useRef, useEffect } from "react";
+import VanillaTilt from "vanilla-tilt";
 
 export default function Contact({ language }) {
   const emailRef = useRef(null);
@@ -13,21 +14,13 @@ export default function Contact({ language }) {
     }, 2000);
   };
 
-  // useEffect(() => {
-  //   const mouseMove = (evt) => {
-  //     const x = (evt.clientX - cardRect.left) / cardRect.width;
-  //     const dx = -(x - 0.5);
-  //     const dxNorm = Math.min(Math.max(dx, -0.5), 0.5);
-  //     const y = (evt.clientY - cardRect.top) / cardRect.height - 0.5;
-
-  //     cardRef.current.style.transform = `perspective(1000px) rotateY(${
-  //       dxNorm * 35
-  //     }deg) rotateX(${y * 35}deg) `;
-  //   };
-  //   const cardRect = cardRef.current.getBoundingClientRect();
-
-  //   cardRef.current.addEventListener("mousemove", (e) => mouseMove(e));
-  // }, []);
+  useEffect(() => {
+    VanillaTilt.init(cardRef.current, {
+      max: 20,
+      speed: 400,
+      transition: true,
+    });
+  }, []);
 
   return (
     <section id="contact" className="contact-container">
@@ -73,7 +66,6 @@ export default function Contact({ language }) {
         <div className="card-data">
           <code>
             <div>
-              {" "}
               <span className="variable">const </span>
               <span className="function">contact </span>
               <span className="operator">= </span>
@@ -81,14 +73,12 @@ export default function Contact({ language }) {
             </div>
 
             <div className="indent">
-              {" "}
               <span className="property">name</span>
               <span className="operator">: </span>
               <span className="string">'Horváth Péter'</span>
               <span>,</span>
             </div>
             <div className="indent">
-              {" "}
               <span className="property">email</span>
               <span className="operator">: </span>
               <span
@@ -101,7 +91,6 @@ export default function Contact({ language }) {
               <span>,</span>
             </div>
             <div className="indent">
-              {" "}
               <span className="property">linkedIn</span>
               <span className="operator">: </span>
               <span className="string">
@@ -116,7 +105,6 @@ export default function Contact({ language }) {
               <span>,</span>
             </div>
             <div className="indent">
-              {" "}
               <span className="property">gitHub</span>
               <span className="operator">: </span>
               <span className="string">
@@ -131,7 +119,6 @@ export default function Contact({ language }) {
               <span>,</span>
             </div>
             <div className="indent">
-              {" "}
               <span className="property">website</span>
               <span className="operator">: </span>
               <span className="string">'paether.dev'</span>
