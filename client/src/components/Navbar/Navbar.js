@@ -1,12 +1,10 @@
 import { useRef, useEffect } from "react";
-import lang from "../../translation";
 
 export default function Navbar({
   aboutNav,
   projectsNav,
   contactNav,
   language,
-  setLanguage,
 }) {
   const headerNavRef = useRef(null);
   const dropDownNavRef = useRef(null);
@@ -14,8 +12,6 @@ export default function Navbar({
   const hamburger = useRef(null);
   const logoRef = useRef(null);
   const navCheckBoxRef = useRef(null);
-  const huFlag = useRef(null);
-  const gbFlag = useRef(null);
 
   const toggleNav = () => {
     if (navCheckBoxRef.current.checked) {
@@ -37,24 +33,42 @@ export default function Navbar({
     }
   };
 
-  let prevScrollpos = window.pageYOffset;
-  window.onscroll = function () {
-    let currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-      headerRef.current.style.top = "0";
-      hamburger.current.style.top = "11px";
-    } else {
-      headerRef.current.style.top = "calc(-4rem - 40px)";
-      if (dropDownNavRef.current.getAttribute("data-visible") === "false") {
-        hamburger.current.style.setProperty(
-          "top",
-          "calc(-4rem - 40px)",
-          "important"
-        );
+  useEffect(() => {
+    document.addEventListener("wheel", (e) => {
+      if (e.deltaY < 0) {
+        headerRef.current.style.top = "0";
+        hamburger.current.style.top = "11px";
+      } else if (e.deltaY > 0) {
+        headerRef.current.style.top = "calc(-4rem - 40px)";
+        if (dropDownNavRef.current.getAttribute("data-visible") === "false") {
+          hamburger.current.style.setProperty(
+            "top",
+            "calc(-4rem - 40px)",
+            "important"
+          );
+        }
       }
-    }
-    prevScrollpos = currentScrollPos;
-  };
+    });
+  }, []);
+
+  // let prevScrollpos = window.pageYOffset;
+  // window.onscroll = function () {
+  //   let currentScrollPos = window.pageYOffset;
+  //   if (prevScrollpos > currentScrollPos) {
+  //     headerRef.current.style.top = "0";
+  //     hamburger.current.style.top = "11px";
+  //   } else {
+  //     headerRef.current.style.top = "calc(-4rem - 40px)";
+  //     if (dropDownNavRef.current.getAttribute("data-visible") === "false") {
+  //       hamburger.current.style.setProperty(
+  //         "top",
+  //         "calc(-4rem - 40px)",
+  //         "important"
+  //       );
+  //     }
+  //   }
+  //   prevScrollpos = currentScrollPos;
+  // };
 
   function removeTransition(e) {
     if (!e.target.classList.contains("text_shadows")) return;
@@ -76,24 +90,6 @@ export default function Navbar({
     };
   }, []);
 
-  let resizeTimer;
-  window.addEventListener("resize", () => {
-    hamburger.current?.classList.add("resize");
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      // hamburger.current.classList.remove("resize");
-    }, 400);
-  });
-  // useEffect(() => {
-  //   if (language === "en") {
-  //     gbFlag.current.classList.add("active");
-  //     huFlag.current.classList.remove("active");
-  //   } else {
-  //     huFlag.current.classList.add("active");
-  //     gbFlag.current.classList.remove("active");
-  //   }
-  // }, [language]);
-
   return (
     <>
       <section className="header-container" ref={headerRef}>
@@ -101,31 +97,19 @@ export default function Navbar({
           <h2 className="text_shadows">P</h2>
         </div>
         <ul className="menu-item-container" ref={headerNavRef}>
-          {/* <li className="flag-container">
-            <div
-              className="flag hu"
-              ref={huFlag}
-              onClick={() => setLanguage("hu")}
-            ></div>
-            <div
-              className="flag gb"
-              ref={gbFlag}
-              onClick={() => setLanguage("en")}
-            ></div>
-          </li> */}
           <li>
             <a ref={aboutNav} className="about active" href="#about">
-              {lang[language].nav_about}
+              About
             </a>
           </li>
           <li>
             <a ref={projectsNav} className="projects" href="#projects">
-              {lang[language].nav_projects}
+              Projects
             </a>
           </li>
           <li>
             <a ref={contactNav} className="contact" href="#contact">
-              {lang[language].nav_contact}
+              Contact
             </a>
           </li>
         </ul>

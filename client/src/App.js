@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
@@ -8,9 +8,6 @@ import Footer from "./components/Footer/Footer";
 import Projects from "./components/Projects/Projects";
 
 function App() {
-  const [language, setLanguage] = useState(
-    JSON.parse(localStorage.getItem("language")) || "en"
-  );
   const aboutNav = useRef(null);
   const projectsNav = useRef(null);
   const contactNav = useRef(null);
@@ -19,11 +16,9 @@ function App() {
   let reveals;
 
   useEffect(() => {
-    localStorage.setItem("language", JSON.stringify(language));
-  }, [language]);
-
-  useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     sections = document.querySelectorAll("section[id]");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     reveals = document.querySelectorAll(".reveal");
 
     function navHighlighter() {
@@ -97,12 +92,10 @@ function App() {
 
   return (
     <div className="main-container">
-      <Navbar
-        {...{ aboutNav, projectsNav, contactNav, language, setLanguage }}
-      />
-      <Introduction {...{ language }} />
-      <Projects {...{ language }} />
-      <Contact {...{ language }} />
+      <Navbar {...{ aboutNav, projectsNav, contactNav }} />
+      <Introduction />
+      <Projects />
+      <Contact />
       <Footer />
     </div>
   );
