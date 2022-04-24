@@ -64,38 +64,29 @@ export default function Introduction({ language }) {
   return (
     <section id="about" className="intro-container" ref={introContainer}>
       <h1 className="name">
-        {language === "en" ? (
-          <>
-            <FirstName />
-            <LastName />
-          </>
-        ) : (
-          <>
-            <LastName />
-            <FirstName />
-          </>
-        )}
+        <FirstName />
+        <LastName />
       </h1>
 
       <h2 ref={role} className="role"></h2>
 
       <div className="description">
         <p>
-          "Coming from a background of digital automation, I'm a self-taught web
-          developer who is paving his way into the web development industry.",
+          Coming from a background of digital automation, I'm a self-taught web
+          developer who is paving his way into the web development industry.
         </p>
         <p>
-          "Having tried myself out in JavaScript and its ecosystem as a hobby, I
+          Having tried myself out in JavaScript and its ecosystem as a hobby, I
           knew I got hooked and there was no turning back. It has everything I
           have looked for — things to try out constantly, express my creativity
           and also endless challenges to keep my mind occupied — thus I have
-          decided to transition it into my job as well.",
+          decided to transition it into my job as well.
         </p>
         <p>
-          "Committed to the idea of life-long learning with a passion for
+          Committed to the idea of life-long learning with a passion for
           JavaScript, React, and all things web development. I'm a
           well-organised person with a high attention to detail mindset who
-          loves solving problems.",
+          loves solving problems.
         </p>
         <hr />
       </div>
