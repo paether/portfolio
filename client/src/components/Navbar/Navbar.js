@@ -1,11 +1,8 @@
 import { useRef, useEffect } from "react";
 
-export default function Navbar({
-  aboutNav,
-  projectsNav,
-  contactNav,
-  language,
-}) {
+let prevScroll;
+
+export default function Navbar({ aboutNav, projectsNav, contactNav }) {
   const headerNavRef = useRef(null);
   const dropDownNavRef = useRef(null);
   const headerRef = useRef(null);
@@ -33,42 +30,28 @@ export default function Navbar({
     }
   };
 
-  useEffect(() => {
-    document.addEventListener("wheel", (e) => {
-      if (e.deltaY < 0) {
-        headerRef.current.style.top = "0";
-        hamburger.current.style.top = "11px";
-      } else if (e.deltaY > 0) {
-        headerRef.current.style.top = "calc(-4rem - 40px)";
-        if (dropDownNavRef.current.getAttribute("data-visible") === "false") {
-          hamburger.current.style.setProperty(
-            "top",
-            "calc(-4rem - 40px)",
-            "important"
-          );
-        }
+  const handleNavVisibility = () => {
+    let currentScrollPos = window.pageYOffset;
+    if (window.pageYOffset < 50) return;
+    if (prevScroll > currentScrollPos) {
+      headerRef.current.style.top = "0";
+      hamburger.current.style.top = "11px";
+    } else {
+      headerRef.current.style.top = "calc(-4rem - 40px)";
+      if (dropDownNavRef.current.getAttribute("data-visible") === "false") {
+        hamburger.current.style.setProperty(
+          "top",
+          "calc(-4rem - 40px)",
+          "important"
+        );
       }
-    });
-  }, []);
+    }
+    prevScroll = currentScrollPos;
+  };
 
-  // let prevScrollpos = window.pageYOffset;
-  // window.onscroll = function () {
-  //   let currentScrollPos = window.pageYOffset;
-  //   if (prevScrollpos > currentScrollPos) {
-  //     headerRef.current.style.top = "0";
-  //     hamburger.current.style.top = "11px";
-  //   } else {
-  //     headerRef.current.style.top = "calc(-4rem - 40px)";
-  //     if (dropDownNavRef.current.getAttribute("data-visible") === "false") {
-  //       hamburger.current.style.setProperty(
-  //         "top",
-  //         "calc(-4rem - 40px)",
-  //         "important"
-  //       );
-  //     }
-  //   }
-  //   prevScrollpos = currentScrollPos;
-  // };
+  useEffect(() => {
+    window.addEventListener("scroll", handleNavVisibility);
+  }, []);
 
   function removeTransition(e) {
     if (!e.target.classList.contains("text_shadows")) return;
