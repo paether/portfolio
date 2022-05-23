@@ -12,7 +12,7 @@
   overflow: hidden;
   padding-bottom: 50px;
 }
-.contact-container{
+.contact-container {
   margin-bottom: 50px;
 }
 .projects {
@@ -25,7 +25,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 .project-connector {
   height: 50px;
@@ -37,9 +36,8 @@
   padding: 2rem;
   height: 100%;
   /* box-shadow: 0 20px 80px 0 rgb(0 0 0 / 45%); */
-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .project-description li {
@@ -59,6 +57,9 @@ rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 .project[data-project="shorturl"] {
   background-image: url("../../../public/assets/shorturl.png");
 }
+.project[data-project="chatter"] {
+  background-image: url("../../../public/assets/chatter.png");
+}
 .project-description-container {
   width: clamp(80%, 80vw, 800px);
   transition: all 1.2s ease;
@@ -77,14 +78,13 @@ rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   background-position: center;
   background-size: cover;
   /* box-shadow: 0 20px 80px 0 rgb(0 0 0 / 45%); */
-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
-.project:first-of-type{
+.project:first-of-type {
   margin-top: 3rem;
 }
-.project:not(:first-of-type){
+.project:not(:first-of-type) {
   margin-top: 6rem;
 }
 
@@ -108,8 +108,7 @@ rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   align-items: center;
   color: var(--clr-white);
   font-size: 2.5rem;
-  padding: 2rem clamp(2.5rem, 8vw, 6rem) 2rem
-      clamp(2.5rem, 10vw, 10rem);
+  padding: 2rem clamp(2.5rem, 8vw, 6rem) 2rem clamp(2.5rem, 10vw, 10rem);
 }
 
 .projects-header-line:after,
@@ -138,7 +137,6 @@ rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 .reveal.active {
   transform: translateX(0);
   opacity: 1;
-
 }
 
 .desc-active {
@@ -191,13 +189,14 @@ button {
   text-align: center;
   vertical-align: middle;
   font-size: 0.8rem;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   padding: 12px 20px;
   background-color: #f06449;
   background: linear-gradient(270deg, #f06449, #ef3636);
   color: #fff;
   position: relative;
   transition: all 0.3s;
+  border-radius: 2px;
 }
 button {
   background-image: none;
@@ -281,10 +280,12 @@ button[disabled] {
 .project-tech-stack {
   color: white;
   font-size: 1.5rem;
+  text-shadow: 0.1em 0.1em 0 black;
 }
 .project-tech-stack-details {
   font-size: 1rem;
   font-weight: 400;
+  text-shadow: 0.1em 0.1em 0 black;
 }
 .project-links-container {
   display: flex;

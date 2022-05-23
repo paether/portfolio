@@ -77,6 +77,7 @@ function App() {
         }
       }
     }
+
     window.addEventListener("scroll", () => {
       reveal();
       navHighlighter();

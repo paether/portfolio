@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import Typed from "typed.js";
 
-export default function Introduction({ language }) {
+export default function Introduction() {
   const introContainer = useRef(null);
   const role = useRef(null);
   const typed = useRef(null);

@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import VanillaTilt from "vanilla-tilt";
 
-export default function Contact({ language }) {
+export default function Contact() {
   const emailRef = useRef(null);
   const cardRef = useRef(null);
   const handleCopytoClipboard = () => {
@@ -75,7 +75,7 @@ export default function Contact({ language }) {
             <div className="indent">
               <span className="property">name</span>
               <span className="operator">: </span>
-              <span className="string">'Horváth Péter'</span>
+              <span className="string">'Péter Horváth'</span>
               <span>,</span>
             </div>
             <div className="indent">
