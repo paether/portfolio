@@ -51,6 +51,17 @@ export default function Navbar({ aboutNav, projectsNav, contactNav }) {
 
   useEffect(() => {
     window.addEventListener("scroll", handleNavVisibility);
+
+    hamburger.current.addEventListener("animationend", () => {
+      hamburger.current.classList.add("resize");
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleNavVisibility);
+      hamburger.current.removeEventListener("animationend", () => {
+        hamburger.current.classList.add("resize");
+      });
+    };
   }, []);
 
   function removeTransition(e) {

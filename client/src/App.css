@@ -39,8 +39,8 @@ body {
   background-color: #152238;
   background-image: url("../public/assets/topology.svg");
 }
-.resize-animation-stopper * {
-  animation-delay: 0ms !important;
+.resize-animation-stopper {
+  animation: none !important;
 }
 
 @keyframes fadeIn {
