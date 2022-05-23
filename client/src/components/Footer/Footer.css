@@ -9,6 +9,9 @@
   bottom: 0;
   left: 50px;
 }
+.footer-container.resize {
+  animation-delay: 0s;
+}
 
 .links-container ul {
   list-style: none;

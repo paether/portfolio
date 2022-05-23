@@ -51,16 +51,17 @@ export default function Navbar({ aboutNav, projectsNav, contactNav }) {
 
   useEffect(() => {
     window.addEventListener("scroll", handleNavVisibility);
+    let headerRefCurrent = headerRef.current;
+    let hamburgerRefCurrent = hamburger.current;
 
-    headerRef.current.addEventListener("animationend", () => {
-      console.log("run");
-      hamburger.current.classList.add("resize");
+    headerRefCurrent.addEventListener("animationend", () => {
+      hamburgerRefCurrent.classList.add("resize");
     });
 
     return () => {
       window.removeEventListener("scroll", handleNavVisibility);
-      headerRef.current.removeEventListener("animationend", () => {
-        hamburger.current.classList.add("resize");
+      headerRefCurrent.removeEventListener("animationend", () => {
+        hamburgerRefCurrent.classList.add("resize");
       });
     };
   }, []);

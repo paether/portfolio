@@ -1,6 +1,29 @@
+import { useRef, useEffect } from "react";
+
 export default function Footer() {
+  const footerContainerRef = useRef(null);
+  useEffect(() => {
+    let footerContainerRefCurrent = footerContainerRef.current;
+
+    const handleAnimationend = () => {
+      footerContainerRefCurrent.classList.add("resize");
+    };
+
+    footerContainerRefCurrent.addEventListener(
+      "animationend",
+      handleAnimationend
+    );
+
+    return () => {
+      footerContainerRefCurrent.removeEventListener(
+        "animationend",
+        handleAnimationend
+      );
+    };
+  }, []);
+
   return (
-    <section className="footer-container">
+    <section ref={footerContainerRef} className="footer-container">
       <ul className="links-container">
         <li>
           <a
