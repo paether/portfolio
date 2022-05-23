@@ -80,6 +80,9 @@ hr {
   justify-content: center;
   text-align: center;
   gap: 3px;
+  padding: 10px;
+  background-color: #2e394c;
+  border-radius: 5px;
 }
 .skill-icon {
   width: 50px;

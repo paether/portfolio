@@ -52,13 +52,14 @@ export default function Navbar({ aboutNav, projectsNav, contactNav }) {
   useEffect(() => {
     window.addEventListener("scroll", handleNavVisibility);
 
-    hamburger.current.addEventListener("animationend", () => {
+    headerRef.current.addEventListener("animationend", () => {
+      console.log("run");
       hamburger.current.classList.add("resize");
     });
 
     return () => {
       window.removeEventListener("scroll", handleNavVisibility);
-      hamburger.current.removeEventListener("animationend", () => {
+      headerRef.current.removeEventListener("animationend", () => {
         hamburger.current.classList.add("resize");
       });
     };

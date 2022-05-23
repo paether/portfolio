@@ -12,6 +12,7 @@ export default function Introduction() {
   }
 
   function wobble(e) {
+    if (!e.target.classList.contains("wobbles")) return;
     e.target.classList.add("active");
   }
 
