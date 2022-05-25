@@ -33,7 +33,7 @@ const wishListText = {
       useCallback were a big help in solving them.
     </>,
     <>
-      Firebase data handling are quite unique compared to <b>mongoDB/T-SQL</b>
+      Firebase data handling are quite unique compared to <b>MongoDB/T-SQL</b>
       which I am already used to, so it was a good learning challange to find
       out how to query and store data with their special real-time snapshot
       updates with the help of their documentation.
@@ -97,7 +97,7 @@ const portfolioText = {
 const chatterText = {
   features: [
     <>
-      Login and Register into the app, using <b>passportjs</b> with{" "}
+      Login and Register into the app, using <b>Passport.js</b> with{" "}
       <b>express</b> cookie sessions for auth.
     </>,
     <>Search for and add users as friends, start chatting right away.</>,
@@ -120,15 +120,15 @@ const chatterText = {
       re-renders of the components were happening.
     </>,
     <>
-      The session handling of <b>PassportJS / Express</b> with socket.io to keep
-      users logged in even when the page is refreshed. I had to dig deep into
-      documentations on how to synchronize express-passport-socketio
-      login/logout sessions with cookies which took multiple days..
+      The session handling of <b>Passport.js / Express</b> with socket.io to
+      keep users logged in even when the page is refreshed. I had to dig deep
+      into documentations on how to synchronize express-passport-socket
+      login/logout sessions with cookies which took multiple days.
     </>,
     <>
       Figuring out the special types/interfaces needed for<b>TypeScript</b>{" "}
-      which was cumbersome but very worth it in during testing and when adding
-      new capabilites to the app.
+      which was cumbersome but well worth it during testing and when adding new
+      capabilites to the app.
     </>,
   ],
 };
