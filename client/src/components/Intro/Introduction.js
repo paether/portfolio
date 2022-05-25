@@ -78,7 +78,7 @@ export default function Introduction() {
           development industry.
         </p>
         <p>
-          Having tried myself out in JavaScript and its ecosystem party in my
+          Having tried myself out in JavaScript and its ecosystem partly in my
           current job and as a hobby, I knew I got hooked and there was no
           turning back. It has everything I have looked for — things to try out
           constantly, express my creativity and also endless challenges to keep
