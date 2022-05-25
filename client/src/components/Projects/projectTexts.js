@@ -1,7 +1,7 @@
 const wishListText = {
   features: [
     <>
-      Create a wish list without the need to register (<b>Firebase</b> auth with
+      Create a wish list without the need to register (<b>Firebase</b> auth with{" "}
       <b>bcrypt</b> and <b>JWT</b>).
     </>,
     <>Hungarian and English language support.</>,
@@ -33,7 +33,7 @@ const wishListText = {
       useCallback were a big help in solving them.
     </>,
     <>
-      Firebase data handling are quite unique compared to <b>MongoDB/T-SQL</b>
+      Firebase data handling are quite unique compared to <b>MongoDB/T-SQL</b>{" "}
       which I am already used to, so it was a good learning challange to find
       out how to query and store data with their special real-time snapshot
       updates with the help of their documentation.

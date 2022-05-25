@@ -20,6 +20,7 @@ export default function Projects() {
           projectName="Chatter"
           projectClassName="chatter"
           gitHub="https://github.com/paether/p-chatter/"
+          liveSite="https://p-chatter.herokuapp.com/"
           projectDescriptionItems={chatterText}
         />
         <Project
