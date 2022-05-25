@@ -1,8 +1,8 @@
 const wishListText = {
   features: [
     <>
-      Create a wish list without the need to register (Firebase auth with bcrypt
-      and JWT).
+      Create a wish list without the need to register (<b>Firebase</b> auth with
+      <b>bcrypt</b> and <b>JWT</b>).
     </>,
     <>Hungarian and English language support.</>,
     <>
@@ -14,11 +14,11 @@ const wishListText = {
     </>,
     <>
       Any changes on the wish list appeares on any other opened windows as well
-      (socket.io websockets).
+      (<b>socket.io</b> websockets).
     </>,
     <>
       Switch between admin and non-admin mode with a password to be able to
-      delete/update/add (CRUD) gifts.
+      delete/update/add (<b>CRUD</b>) gifts.
     </>,
   ],
   challenges: [
@@ -33,15 +33,15 @@ const wishListText = {
       useCallback were a big help in solving them.
     </>,
     <>
-      Firebase data handling are quite unique compared to mongoDB/T-SQL which I
-      am already used to, so it was a good learning challange to find out how to
-      query and store data with their special real-time snapshot updates with
-      the help of their documentation.
+      Firebase data handling are quite unique compared to <b>mongoDB/T-SQL</b>
+      which I am already used to, so it was a good learning challange to find
+      out how to query and store data with their special real-time snapshot
+      updates with the help of their documentation.
     </>,
     <>
-      I wanted to try out Heroku's node.js hosting which was challenging in the
-      beginning but thanks to their detailed documentation I could solve it
-      quickly.
+      I wanted to try out Heroku's <b>node.js</b> hosting which was challenging
+      in the beginning but thanks to their detailed documentation I could solve
+      it quickly.
     </>,
     <>
       I came up with the design of the site on my own as well which was also
