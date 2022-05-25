@@ -1,3 +1,5 @@
+import "./Project.css";
+
 export default function Project({
   slideInPosition,
   techStackDetails,
@@ -55,9 +57,13 @@ export default function Project({
       <div className={"project-description-container " + projectClassName}>
         <div className="project-connector"></div>
         <div className="project-description">
-          <h2 className="project-description-header">Main features:</h2>
+          <h2 className="project-description-header">
+            {projectDescriptionItems.challenges
+              ? "Main features:"
+              : "Main features / Challenges"}
+          </h2>
           <ul className="project-description-items">
-            {projectDescriptionItems.map((item, index) => {
+            {projectDescriptionItems.features.map((item, index) => {
               return (
                 <li key={index} className="project-description-item">
                   {item}
@@ -65,6 +71,21 @@ export default function Project({
               );
             })}
           </ul>
+
+          {projectDescriptionItems.challenges && (
+            <>
+              <h2 className="project-description-header">Challenges:</h2>
+              <ul className="project-description-items">
+                {projectDescriptionItems.challenges.map((item, index) => {
+                  return (
+                    <li key={index} className="project-description-item">
+                      {item}
+                    </li>
+                  );
+                })}
+              </ul>
+            </>
+          )}
         </div>
       </div>
     </>

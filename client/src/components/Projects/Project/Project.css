@@ -1,0 +1,6 @@
+.project-description-items {
+  margin-left: 40px;
+}
+.project-description-header:not(:first-child) {
+  margin-top: 20px;
+}

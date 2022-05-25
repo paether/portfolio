@@ -61,7 +61,7 @@
   background-image: url("../../../public/assets/chatter.png");
 }
 .project-description-container {
-  width: clamp(80%, 80vw, 800px);
+  width: clamp(60%, 80vw, 800px);
   transition: all 1.2s ease;
   transition-delay: 0.5s;
   transform: translateY(-100px);
@@ -69,7 +69,7 @@
   z-index: -1;
 }
 .project {
-  width: clamp(80%, 80vw, 800px);
+  width: clamp(60%, 80vw, 800px);
 
   height: 21rem;
   position: relative;
@@ -151,7 +151,6 @@
   align-items: center;
   gap: 20px;
   left: 2rem;
-  padding-right: 20px;
   bottom: 2rem;
   color: #fff;
   z-index: 10;
